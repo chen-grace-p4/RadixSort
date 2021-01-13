@@ -108,9 +108,14 @@ public class Radix {
       if (digit == 0) passes = length(max);
       reverseMerge(data, buckets);
     }
+
+    for (int i = 0; i < data.size(); i++) {
+      data.set(i, -data.get(i));
+    }
+
   }
 
-  public static SortableLinkedList radixSort(SortableLinkedList data) { //RETURN TO VOID
+  public static void radixSort(SortableLinkedList data) { //RETURN TO VOID
     SortableLinkedList negData = new SortableLinkedList();
     SortableLinkedList posData = new SortableLinkedList();
     for (int i = data.size()-1; i >= 0; i--) {
@@ -121,13 +126,11 @@ public class Radix {
       }
       data.remove(i);
     }
-    // radixSortSimple(posData);
-    // negativeSort(negData);
-    radixSortSimple(negData);
-    //
-    // data.extend(negData);
-    // data.extend(posData);
-    return negData;
+    radixSortSimple(posData);
+    negativeSort(negData);
+
+    data.extend(negData);
+    data.extend(posData);
   }
 
 }

@@ -49,10 +49,11 @@ public class Tester {
     // System.out.println(buckets[0]);
 
     a.add(-12); a.add(24); a.add(0); a.add(-100);
+    a.add(-2000); a.add(-1000); a.add(-333);
     // System.out.println(Radix.radixSort(a));
-    System.out.println(Radix.nth(100, 2));
-    System.out.println(Radix.nth(400, 2));
-    // Radix.radixSort(a);
+    // System.out.println(Radix.nth(100, 2));
+    // System.out.println(Radix.nth(400, 2));
+    Radix.radixSort(a);
     System.out.println(a);
   }
 }
