@@ -36,37 +36,36 @@ public class Radix {
     }
   }
 
-  public static SortableLinkedList radixSortSimple(SortableLinkedList data) { //return to void after
+  public static void radixSortSimple(SortableLinkedList data) {
     SortableLinkedList[] buckets = new SortableLinkedList[10];
     int passes = 1;
     for (int digit = 0; digit < passes; digit++) {
       int max = 0;
 
-      for (int i = 0; i < data.size(); i++) {
+      while (data.size() > 0) {
+        int val = data.get(0);
+
         if (digit == 0) {
-          if (data.get(i) > max) {
-            max = data.get(i);
+          if (val > max) {
+            max = val;
           }
         }
 
-        int numCol = nth(data.get(i), digit);
-        if (length(data.get(i)) < digit+1) {
+        int numCol = nth(val, digit);
+        if (length(val) < digit+1) {
           numCol = 0;
         }
         if (buckets[numCol] == null) {
           SortableLinkedList placeHold = new SortableLinkedList();
           buckets[numCol] = placeHold;
         }
-        buckets[numCol].add(data.get(i));
+        buckets[numCol].add(val);
+        data.remove(0);
       }
 
       if (digit == 0) passes = length(max);
-      SortableLinkedList placeHolder = new SortableLinkedList();
-      merge(placeHolder, buckets);
-      data = placeHolder;
-      // return placeHolder;
+      merge(data, buckets);
     }
-    return data;
   }
 
 }

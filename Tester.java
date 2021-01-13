@@ -37,11 +37,11 @@ public class Tester {
     a.add(12);a.add(34);a.add(42);a.add(32);a.add(44);
     a.add(41);a.add(34);a.add(11);a.add(32);a.add(23);
     a.add(87);a.add(50);a.add(77);a.add(58);a.add(8);
-
     a.add(3); a.add(2);
     System.out.println(a);
-    System.out.println(Radix.radixSortSimple(a));
-    // System.out.println(a);
+    // System.out.println(Radix.radixSortSimple(a));
+    Radix.radixSortSimple(a);
+    System.out.println(a);
 
     // SortableLinkedList[] buckets = new SortableLinkedList[10];
     // buckets[0] = a;
