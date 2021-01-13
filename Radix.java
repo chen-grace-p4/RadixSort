@@ -1,5 +1,8 @@
 public class Radix {
   public static int nth(int n, int col) {
+    if (n < 0) {
+      n = -n;
+    }
     int modNum = 10;
     for (int i = 0; i < col; i++) {
       modNum = modNum * 10;
