@@ -3,14 +3,12 @@ public class Radix {
     if (n < 0) {
       n = -n;
     }
-    int modNum = 10;
+    int divNum = 1;
     for (int i = 0; i < col; i++) {
-      modNum = modNum * 10;
+      divNum = divNum * 10;
     }
-    n = n % modNum;
-    while (n >= 10) {
-      n = n / 10;
-    }
+    n = n / divNum;
+    n = n % 10;
     return n;
   }
 
@@ -28,16 +26,6 @@ public class Radix {
 
   public static void merge(SortableLinkedList original, SortableLinkedList[]buckets) {
     for (int i = 0; i < buckets.length; i++) {
-      if (buckets[i] == null) {
-        SortableLinkedList placeHold = new SortableLinkedList();
-        buckets[i] = placeHold;
-      }
-      original.extend(buckets[i]);
-    }
-  }
-
-  public static void reverseMerge(SortableLinkedList original, SortableLinkedList[]buckets) {
-    for (int i = buckets.length-1; i >= 0; i--) {
       if (buckets[i] == null) {
         SortableLinkedList placeHold = new SortableLinkedList();
         buckets[i] = placeHold;
@@ -113,6 +101,15 @@ public class Radix {
       data.set(i, -data.get(i));
     }
 
+  }
+  public static void reverseMerge(SortableLinkedList original, SortableLinkedList[]buckets) {
+    for (int i = buckets.length-1; i >= 0; i--) {
+      if (buckets[i] == null) {
+        SortableLinkedList placeHold = new SortableLinkedList();
+        buckets[i] = placeHold;
+      }
+      original.extend(buckets[i]);
+    }
   }
 
   public static void radixSort(SortableLinkedList data) { //RETURN TO VOID
