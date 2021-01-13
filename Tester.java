@@ -14,23 +14,38 @@ public class Tester {
     // System.out.println(Radix.length(-5112));
     // System.out.println(Radix.length(5112));
     // System.out.println(Radix.length(5050));
-    MyLinkedList a = new MyLinkedList();
-    a.add("one");
-    MyLinkedList b = new MyLinkedList();
-    b.add("two");
-    b.add("three");
-    MyLinkedList c = new MyLinkedList();
-    c.add("four");
-    c.add("five");
-    c.add("six");
-    MyLinkedList[] testbuckets = {a, b, c};
-    MyLinkedList org = new MyLinkedList();
-    org.add("zero");
-    System.out.println("Buck A: " + a);
-    System.out.println("Buck B: " + b);
-    System.out.println("Buck C: " + c);
-    System.out.println("Orginal: " + org);
-    Radix.merge(org, testbuckets);
-    System.out.println("After Merge: " + org); 
+    // MyLinkedList a = new MyLinkedList();
+    // a.add("one");
+    // MyLinkedList b = new MyLinkedList();
+    // b.add("two");
+    // b.add("three");
+    // MyLinkedList c = new MyLinkedList();
+    // c.add("four");
+    // c.add("five");
+    // c.add("six");
+    // MyLinkedList[] testbuckets = {a, b, c};
+    // MyLinkedList org = new MyLinkedList();
+    // org.add("zero");
+    // System.out.println("Buck A: " + a);
+    // System.out.println("Buck B: " + b);
+    // System.out.println("Buck C: " + c);
+    // System.out.println("Orginal: " + org);
+    // Radix.merge(org, testbuckets);
+    // System.out.println("After Merge: " + org);
+
+    SortableLinkedList a = new SortableLinkedList();
+    a.add(12);a.add(34);a.add(42);a.add(32);a.add(44);
+    a.add(41);a.add(34);a.add(11);a.add(32);a.add(23);
+    a.add(87);a.add(50);a.add(77);a.add(58);a.add(8);
+
+    a.add(3); a.add(2);
+    System.out.println(a);
+    System.out.println(Radix.radixSortSimple(a));
+    // System.out.println(a);
+
+    // SortableLinkedList[] buckets = new SortableLinkedList[10];
+    // buckets[0] = a;
+    // buckets[0].add(1);
+    // System.out.println(buckets[0]);
   }
 }

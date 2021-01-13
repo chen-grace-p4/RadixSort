@@ -28,8 +28,45 @@ public class Radix {
 
   public static void merge(SortableLinkedList original, SortableLinkedList[]buckets) {
     for (int i = 0; i < buckets.length; i++) {
+      if (buckets[i] == null) {
+        SortableLinkedList placeHold = new SortableLinkedList();
+        buckets[i] = placeHold;
+      }
       original.extend(buckets[i]);
     }
+  }
+
+  public static SortableLinkedList radixSortSimple(SortableLinkedList data) { //return to void after
+    SortableLinkedList[] buckets = new SortableLinkedList[10];
+    int passes = 1;
+    for (int digit = 0; digit < passes; digit++) {
+      int max = 0;
+
+      for (int i = 0; i < data.size(); i++) {
+        if (digit == 0) {
+          if (data.get(i) > max) {
+            max = data.get(i);
+          }
+        }
+
+        int numCol = nth(data.get(i), digit);
+        if (length(data.get(i)) < digit+1) {
+          numCol = 0;
+        }
+        if (buckets[numCol] == null) {
+          SortableLinkedList placeHold = new SortableLinkedList();
+          buckets[numCol] = placeHold;
+        }
+        buckets[numCol].add(data.get(i));
+      }
+
+      if (digit == 0) passes = length(max);
+      SortableLinkedList placeHolder = new SortableLinkedList();
+      merge(placeHolder, buckets);
+      data = placeHolder;
+      // return placeHolder;
+    }
+    return data;
   }
 
 }
