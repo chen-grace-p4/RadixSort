@@ -15,7 +15,10 @@ public class Radix {
   }
 
   public static int length(int n) {
-    //use log base 10
+    if (n < 0) {
+      n = -n;
+    }
+    
     if (n == 0) {
       return 1;
     }
