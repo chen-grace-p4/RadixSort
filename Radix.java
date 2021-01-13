@@ -18,12 +18,18 @@ public class Radix {
     if (n < 0) {
       n = -n;
     }
-    
+
     if (n == 0) {
       return 1;
     }
     int nLog = (int) Math.log10(n);
     return nLog + 1;
+  }
+
+  public static void merge(MyLinkedList original,MyLinkedList[]buckets) {
+    for (int i = 0; i < buckets.length; i++) {
+      original.extend(buckets[i]);
+    }
   }
 
 }
