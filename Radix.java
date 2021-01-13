@@ -11,4 +11,13 @@ public class Radix {
     return n;
   }
 
+  public static int length(int n) {
+    //use log base 10
+    if (n == 0) {
+      return 1;
+    }
+    int nLog = (int) Math.log10(n);
+    return nLog + 1;
+  }
+
 }
