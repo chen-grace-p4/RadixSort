@@ -48,18 +48,18 @@ public class Tester {
     // Radix.radixSortSimple(a);
     // System.out.println(a);
 
-    // SortableLinkedList[] buckets = new SortableLinkedList[10];
-    // buckets[0] = a;
-    // buckets[0].add(1);
-    // System.out.println(buckets[0]);
+    SortableLinkedList[] buckets = new SortableLinkedList[10];
+    buckets[0] = a;
+    buckets[0].add(1);
+    System.out.println(buckets[0]);
 
-    // a.add(-12); a.add(24); a.add(0); a.add(-100);
-    // a.add(-2000); a.add(-1000); a.add(-333);
-    // System.out.println(Radix.radixSort(a));
-    // System.out.println(Radix.nth(100, 2));
-    // System.out.println(Radix.nth(400, 2));
-    // Radix.radixSort(a);
-    // System.out.println(a);
+    a.add(-12); a.add(24); a.add(0); a.add(-100);
+    a.add(-2000); a.add(-1000); a.add(-333);
+    System.out.println(Radix.radixSort(a));
+    System.out.println(Radix.nth(100, 2));
+    System.out.println(Radix.nth(400, 2));
+    Radix.radixSort(a);
+    System.out.println(a);
 
     // Random rng = new Random(0);
     // SortableLinkedList l = new SortableLinkedList();
@@ -76,11 +76,11 @@ public class Tester {
     // System.out.println(l);
     // System.out.println(al);
 
-    System.out.println(Radix.nth(1024,0));
-    System.out.println(Radix.nth(1024,1));
-    System.out.println(Radix.nth(1024,2)); //should be 0
-    System.out.println(Radix.nth(10024,2)); //should be 0
-    System.out.println(Radix.nth(1024,3));
-    System.out.println(Radix.nth(123,1));
+    // System.out.println(Radix.nth(1024,0));
+    // System.out.println(Radix.nth(1024,1));
+    // System.out.println(Radix.nth(1024,2)); //should be 0
+    // System.out.println(Radix.nth(10024,2)); //should be 0
+    // System.out.println(Radix.nth(1024,3));
+    // System.out.println(Radix.nth(123,1));
   }
 }

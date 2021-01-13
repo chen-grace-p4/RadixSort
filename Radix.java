@@ -116,10 +116,11 @@ public class Radix {
     SortableLinkedList negData = new SortableLinkedList();
     SortableLinkedList posData = new SortableLinkedList();
     for (int i = data.size()-1; i >= 0; i--) {
-      if (data.get(i) < 0) {
-        negData.add(-(data.get(i)));
+      int val = data.get(i);
+      if (val < 0) {
+        negData.add(-val);
       } else {
-        posData.add(data.get(i));
+        posData.add(val);
       }
       data.remove(i);
     }
