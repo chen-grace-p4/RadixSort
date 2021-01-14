@@ -10,6 +10,8 @@ public class Radix {
     n = n / divNum;
     n = n % 10;
     return n;
+
+    // return (n / (int)Math.pow(10, col)) % 10;
   }
 
   public static int length(int n) {
